@@ -7,9 +7,17 @@ var server = require('../lib/server');
 var request = require('supertest');
 
 describe('server', function() {
-    it('should respond with Hello world!', function(done) {
+    it('should respond with "Hello world!" on /', function(done) {
         request(server)
             .get('/')
             .expect(200, 'Hello world!', done);
     });
+
+    // ['David', 'John', 'Lee'].forEach(function(name) {
+    //     it('should respond with "Hello, ' + name + '!" on /' + name, function(done) {
+    //         request(server)
+    //             .get('/' + name)
+    //             .expect(200, 'Hello, ' + name + '!', done);
+    //     });
+    // });
 });

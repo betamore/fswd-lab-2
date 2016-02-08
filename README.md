@@ -25,3 +25,43 @@ Open Chrome (or your preferred browser) and open the url:
   [http://localhost:8000/another-page](http://localhost:8000/another-page))
 * Try making your requests in another terminal using the `curl`
   command (`curl -v http://localhost:8000`)
+
+## Adding new "pages"
+
+We have received a change request from Product Management. Now, in
+addition to responding with `Hello world!` at the base url
+([http://localhost:8000](http://localhost:8000)), our application needs to respond to other urls in the pattern:
+
+* [http://localhost:8000/David](http://localhost:8000/David) &rarr; "Hello, David!"
+* [http://localhost:8000/John](http://localhost:8000/John) &rarr; "Hello, John!"
+* [http://localhost:8000/Lee](http://localhost:8000/Lee) &rarr; "Hello, Lee!"
+
+To make this change, update the function inside the
+`http.createServer` call in `lib/server.js`. There are already tests
+written for this new case in `test/server-test.js`.
+
+Some useful Javascript to keep in mind:
+
+* `request` in the function has all the information about the web
+  request that you will need, and `request.url` specifically will
+  contain the path being requested (`/`, `/David`, `/John`, etc.).
+* Strings can be indexed just like arrays:
+
+    ```javascript
+    var str = "ABCs and 123s";
+    str[0] === "A";
+    str[1] === "B";
+    str[2] === "C";
+    str[3] === "s";
+    ```
+
+* Strings have a function (like arrays have `.push` and the others)
+  named `replace`. For its basic usage, It takes two arguments: the
+  string to replace, and the string with which to replace it.
+
+    ```javascript
+    var str = "ABCs and 123s";
+    str.replace("ABC", "XYZ") === "XYZs and 123s";
+    ```
+
+    
