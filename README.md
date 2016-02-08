@@ -63,5 +63,6 @@ Some useful Javascript to keep in mind:
     var str = "ABCs and 123s";
     str.replace("ABC", "XYZ") === "XYZs and 123s";
     ```
-
     
+  More information is available on the
+  [`replace` documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace).
