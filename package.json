@@ -5,6 +5,7 @@
   "repository": "github:betamore/fswd-lab-2",
   "main": "lib/index.js",
   "scripts": {
+    "start": "node ./lib/index.js",
     "test": "mocha"
   },
   "keywords": [],
