@@ -5,6 +5,26 @@
 3. `cd` to the project directory and run `npm install`.
 4. Run `npm test` to make sure everything is working.
 
+## `curl`s
+
+* To perform a `GET` request for `http://google.com`:
+
+      ```shell
+      curl -vs -D - http://google.com -o /dev/null 2>&1 | grep -v '^\w'
+      ```
+
+* To perform a `GET` request for `http://www.google.com`:
+
+      ```shell
+      curl -vs -D - http://www.google.com -o /dev/null 2>&1 | grep -v '^\w'
+      ```
+
+* To perform a `GET` request for `https://www.google.com`:
+
+      ```shell
+      curl -vs -D - https://www.google.com -o /dev/null 2>&1 | grep -v '^\w'
+      ```
+
 ## Running the application
 
 From the command line, run `node lib/index.js`. That will start a very
@@ -63,6 +83,6 @@ Some useful Javascript to keep in mind:
     var str = "ABCs and 123s";
     str.replace("ABC", "XYZ") === "XYZs and 123s";
     ```
-    
+
   More information is available on the
   [`replace` documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace).
