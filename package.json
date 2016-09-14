@@ -1,7 +1,8 @@
 {
-  "name": "fswd-winter-2016-lab-2",
+  "name": "fswd-lab-2",
   "version": "1.0.0",
   "description": "Full Stack Web Development - Lab 2: Hello World Web Server in Node",
+  "repository": "github:betamore/fswd-lab-2",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha"
