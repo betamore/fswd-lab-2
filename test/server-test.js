@@ -13,11 +13,17 @@ describe('server', function() {
             .expect(200, 'Hello world!', done);
     });
 
-    // ['David', 'John', 'Lee'].forEach(function(name) {
-    //     it('should respond with "Hello, ' + name + '!" on /' + name, function(done) {
-    //         request(server)
-    //             .get('/' + name)
-    //             .expect(200, 'Hello, ' + name + '!', done);
-    //     });
-    // });
+    ['David', 'John', 'Lee'].forEach(function(name) {
+        it('should respond with "Hello, ' + name + '!" on /' + name, function(done) {
+            request(server)
+                .get('/' + name)
+                .expect(200, 'Hello, ' + name + '!', done);
+        });
+    });
+
+    it('should use the last name', function(done) {
+      request(server)
+        .get('/David?lastName=Raynes')
+        .expect(200, 'Hello, David Raynes!', done);
+    });
 });
