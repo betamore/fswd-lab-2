@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node ./lib/index.js",
+    "dev": "NODE_ENV=development node ./lib/index.js",
     "test": "istanbul cover -x **/logger.js _mocha",
     "lint": "eslint --ignore-path .gitignore . || exit 0",
     "coverage_report": "opn coverage/lcov-report/index.html"

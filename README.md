@@ -27,7 +27,7 @@
 
 ## Running the application
 
-From the command line, run `npm start`. That will start a very
+From the command line, run `npm run dev`. That will start a very
 simple node HTTP server on your machine. Note that the program has to
 remain running to respond to any web requests; to stop the server,
 type `Control-C` (hold down the `Control` key and then press `C`).
