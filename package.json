@@ -6,13 +6,21 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node ./lib/index.js",
-    "test": "mocha"
+    "test": "istanbul cover -x **/logger.js _mocha",
+    "lint": "eslint --ignore-path .gitignore . || exit 0",
+    "coverage_report": "opn coverage/lcov-report/index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^3.14.1",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
+    "opn-cli": "^3.1.0",
     "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "winston": "^2.3.1"
   }
 }
