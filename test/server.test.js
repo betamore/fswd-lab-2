@@ -1,7 +1,7 @@
 'use strict';
 
 // code to test
-var server = require('../lib/server');
+var server = require('server');
 
 // libraries
 var request = require('supertest');
@@ -19,5 +19,11 @@ describe('server', function() {
     //             .get('/' + name)
     //             .expect(200, 'Hello, ' + name + '!');
     //     });
+    // });
+    //
+    // it('should only strip the first /', function() {
+    //     return request(server)
+    //         .get('/David/Raynes/is/the/fswd/instructor')
+    //         .expect(200, 'Hello, David/Raynes/is/the/fswd/instructor!');
     // });
 });
