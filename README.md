@@ -3,9 +3,8 @@
 
 ### Lab Setup
 
-1. Clone the repository to your own machine. Be sure to run the `git clone
-   <repository url>` command in the same directory as you ran the `git clone`
-   command for [Lab 1](http://betamore.github.io/fswd-lab-1), or at least
+1. Clone the repository to your own machine. Be sure to run the `git clone <repository url>`
+   command in the same directory as you ran the `git clone` command for [Lab 1](http://betamore.github.io/fswd-lab-1), or at least
    _outside_ the directory that contains your laptop's copy of the first lab.
 2. `cd` to the project directory and run `npm install`.
 3. Run `npm test` to make sure everything is working; you could also run `npm t`
