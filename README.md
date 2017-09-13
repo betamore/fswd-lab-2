@@ -1,38 +1,58 @@
-# Full Stack Web Development - Lab 2: Hello World Web Server in Node
+# Full Stack Web Development - Lab 2 #
+## Hello World Web Server in Node ##
 
-1. Fork the repository to your own Github account.
-2. Clone the repository to your own machine.
-3. `cd` to the project directory and run `npm install`.
-4. Run `npm test` to make sure everything is working.
+### Lab Setup
 
-## `curl`s
+1. Clone the repository to your own machine. Be sure to run the `git clone
+   <repository url>` command in the same directory as you ran the `git clone`
+   command for [Lab 1](http://betamore.github.io/fswd-lab-1), or at least
+   _outside_ the directory that contains your laptop's copy of the first lab.
+2. `cd` to the project directory and run `npm install`.
+3. Run `npm test` to make sure everything is working; you could also run `npm t`
+   if the extra `est` is too much typing for you.
+
+### Making Inquiries
+
+We're going to use a tool to make web requests from the terminal:
+[`httpie`](https://httpie.org). You can install it with Homebrew by running the
+command `brew install httpie`. `httpie` uses another tool called `curl`
+internally to make the requests; `httpie` simply makes using `curl` simplier and
+easier. For all the `httpie` commands in this lab, I will also provide the roughly
+equivalent `curl` commands.
 
 * To perform a `GET` request for `http://google.com`:
 
-      ```shell
-      curl -vs -D - http://google.com -o /dev/null 2>&1 | grep -v '^\w'
-      ```
+  ```sh
+  http --print=Hh google.com
+  curl -vs -D - http://google.com -o /dev/null 2>&1 | grep -v '^\w'
+  ```
 
 * To perform a `GET` request for `http://www.google.com`:
 
-      ```shell
-      curl -vs -D - http://www.google.com -o /dev/null 2>&1 | grep -v '^\w'
-      ```
+  ```sh
+  http --print=Hh www.google.com
+  curl -vs -D - http://www.google.com -o /dev/null 2>&1 | grep -v '^\w'
+  ```
 
 * To perform a `GET` request for `https://www.google.com`:
 
-      ```shell
-      curl -vs -D - https://www.google.com -o /dev/null 2>&1 | grep -v '^\w'
-      ```
+  ```sh
+  http --print=Hh https://www.google.com
+  curl -vs -D - https://www.google.com -o /dev/null 2>&1 | grep -v '^\w'
+  ```
 
-## Running the application
+### Running the application
 
 From the command line, run `npm run dev`. That will start a very
 simple node HTTP server on your machine. Note that the program has to
 remain running to respond to any web requests; to stop the server,
 type `Control-C` (hold down the `Control` key and then press `C`).
 
-## Making requests to your server
+Your terminal will stop responding to commands while the application is running.
+If you need to run any other commands, you will need to open a new terminal
+window.
+
+### Making requests to your server
 
 Open Chrome (or your preferred browser) and open the url:
 [http://localhost:8000](http://localhost:8000)
@@ -46,7 +66,7 @@ Open Chrome (or your preferred browser) and open the url:
 * Try making your requests in another terminal using the `curl`
   command (`curl -v http://localhost:8000`)
 
-## Adding new "pages"
+### Adding new "pages"
 
 We have received a change request from Product Management. Now, in
 addition to responding with `Hello world!` at the base url
@@ -58,7 +78,7 @@ addition to responding with `Hello world!` at the base url
 
 To make this change, update the function inside the
 `http.createServer` call in `lib/server.js`. There are already tests
-written for this new case in `test/server-test.js`.
+written for this new case in `test/server.test.js`.
 
 Some useful Javascript to keep in mind:
 
