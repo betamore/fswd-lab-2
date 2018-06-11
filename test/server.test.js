@@ -10,16 +10,22 @@ describe('server', function() {
     it('should respond with "Hello world!" on /', function() {
         return request(server)
             .get('/')
-            .expect(200, 'Hello world!');
+            .expect(200, /Hello world!/);
     });
 
-    // ['David', 'John', 'Lee'].forEach(function(name) {
-    //     it('should respond with "Hello, ' + name + '!" on /' + name, function() {
-    //         return request(server)
-    //             .get('/' + name)
-    //             .expect(200, 'Hello, ' + name + '!');
-    //     });
-    // });
+    ['David', 'John', 'Lee', 'Josh', 'Brad', 'Gina'].forEach(function(name) {
+        it('should respond with "Hello, ' + name + '!" on /' + name, function() {
+            return request(server)
+                .get('/' + name)
+                .expect(200, new RegExp('Hello, ' + name + '!'));
+        });
+    });
+
+    it('should respond with the last name if passed', function() {
+        return request(server)
+            .get('/Brad?lastName=Name')
+            .expect(200, /Hello, Brad Name!/);
+    });
     //
     // it('should only strip the first /', function() {
     //     return request(server)
