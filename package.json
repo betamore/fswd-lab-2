@@ -21,5 +21,8 @@
     "morgan": "^1.9.1",
     "opn-cli": "^4.0.0",
     "supertest": "^3.4.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }

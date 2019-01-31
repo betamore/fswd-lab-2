@@ -13,13 +13,13 @@ describe('server', function() {
             .expect(200, 'Hello world!');
     });
 
-    // ['David', 'John', 'Lee'].forEach(function(name) {
-    //     it('should respond with "Hello, ' + name + '!" on /' + name, function() {
-    //         return request(server)
-    //             .get('/' + name)
-    //             .expect(200, 'Hello, ' + name + '!');
-    //     });
-    // });
+    ['David', 'John', 'Lee'].forEach(function(name) {
+        it('should respond with "Hello, ' + name + '!" on /' + name, function() {
+            return request(server)
+                .get('/' + name)
+                .expect(200, 'Hello, ' + name + '!');
+        });
+    });
     //
     // it('should only strip the first /', function() {
     //     return request(server)
