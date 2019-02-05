@@ -5,7 +5,7 @@
   "repository": "github:betamore/fswd-lab-2",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node ./lib/index.js",
+    "start": "nodemon ./lib/index.js",
     "dev": "NODE_ENV=development node ./lib/index.js",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "jest",
@@ -19,10 +19,13 @@
     "eslint": "^5.12.1",
     "jest": "^24.0.0",
     "morgan": "^1.9.1",
+    "nodemon": "^1.18.9",
     "opn-cli": "^4.0.0",
     "supertest": "^3.4.2"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
   }
 }
