@@ -1,0 +1,10 @@
+extends ./layout
+
+block body
+    p Tasks list!
+    each task in tasks
+        p #{task.name}
+
+    form(action="/tasks" method="POST")
+        input(type="text" name="task")
+        button(type="submit") Add task

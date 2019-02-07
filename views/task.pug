@@ -1,0 +1,7 @@
+extends ./layout
+
+block body
+    h1 #{task.name}!
+
+    form(action="/tasks/" + task.id + "/complete" method="POST")
+        button(type="submit") Complete!
