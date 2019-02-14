@@ -47,9 +47,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  // Task.associate = function(models) {
-  //   // associations can be defined here
-  // };
+  Task.associate = function(models) {
+    Task.belongsTo(models.User);
+  };
 
   Task.prototype.isCompleted = function() {
     return !!this.completedAt;
