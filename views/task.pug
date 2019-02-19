@@ -6,3 +6,12 @@ block body
     if !task.isCompleted()
         form(action="/tasks/" + task.id + "/complete" method="POST")
             button(type="submit") Complete!
+
+    if !task.UserId
+        form(action="/tasks/" + task.id + "/assign" method="POST")
+            select(name="user_id")
+                for user in users
+                    option(value=user.id)= user.username
+            button(type="submit") Assign!
+    else
+        p Assigned to #{task.User.username}

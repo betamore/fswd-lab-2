@@ -3,7 +3,12 @@ extends ./layout
 block body
     p Tasks list!
     each task in tasks
-        p #{task.name}
+        p
+            a(href="/tasks/" + task.id)= task.name
+
+    p Users list!
+    each user in users
+        p= user.username
 
     form(action="/tasks" method="POST")
         input(type="text" name="task")
