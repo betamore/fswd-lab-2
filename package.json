@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^5.12.1",
+    "eslint": "^6.2.2",
     "jest": "^24.0.0",
     "morgan": "^1.9.1",
     "opn-cli": "^4.0.0",
