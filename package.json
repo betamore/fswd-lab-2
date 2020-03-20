@@ -18,7 +18,7 @@
   "devDependencies": {
     "eslint": "^5.12.1",
     "jest": "^24.0.0",
-    "morgan": "^1.9.1",
+    "morgan": "^1.10.0",
     "opn-cli": "^4.0.0",
     "supertest": "^3.4.2"
   }
